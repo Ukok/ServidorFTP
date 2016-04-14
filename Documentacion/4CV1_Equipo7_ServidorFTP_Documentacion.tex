@@ -1,0 +1,77 @@
+\documentclass[letterpaper,12pt,oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+
+\usepackage{hyperref}
+
+\newcommand{\nameDoc}{Servidor FTP}
+
+\hypersetup{
+	colorlinks	= true,
+	linkcolor	= black,
+	pdfauthor	= { Cantellano Mario, Rosas Alejandro },
+	pdftitle	= { \nameDoc },
+	pdfkeywords	= { FTP }
+}
+\usepackage{datetime}
+	\newdateformat{dmy}{\monthname[\THEMONTH] de \THEYEAR}
+\usepackage{geometry}
+\geometry{ letterpaper, margin = 1.0 in }
+\setlength{\topmargin}{0 pt}
+\setlength{\headheight}{0 pt}
+\setlength{\headsep}{12 pt}
+\setlength{\footskip}{12 pt}
+\setlength{\parindent}{12 pt}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[C]{
+		\begin{tabularx}{\textwidth}{|X|c|}
+		\hline 
+		Documentaci\'on & \ddmmyydate\today
+		\\ \hline
+		\multicolumn{2}{|l|}{\nameDoc}
+		\\ \hline
+		\end{tabularx}
+		}
+	\fancyfoot[LE,RO]{ \thepage }
+\renewcommand{\headrulewidth}{0.0 pt}
+\renewcommand{\footrulewidth}{0.0 pt}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[LE,RO]{ \thepage }
+	\renewcommand{\headrulewidth}{0.0 pt}
+	\renewcommand{\footrulewidth}{0.0 pt}
+}
+
+\newcommand{\tqdl}{\textquotedblleft}		% " abren
+\newcommand{\tqdr}{\textquotedblright}		% " cierran
+\newcommand{\ted}{\textexclamdown}			% !
+\newcommand{\grad}{$^{\circ}$} 				% °
+
+\begin{document}
+\renewcommand{\contentsname}{Contenido}
+ 	\pagenumbering{roman}
+	\include{./content/title}
+	
+	\setlength{\headheight}{48 pt}
+	\addtolength{\textheight}{-48 pt}
+	
+  
+  \tableofcontents
+% 	\listoffigures
+% 	\listoftables
+	\clearpage	\pagenumbering{arabic}
+	\include{./content/sections}
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
