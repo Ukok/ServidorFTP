@@ -1,7 +1,14 @@
-Las ventajas que tiene el uso de ftp son:
-\begin{itemize}
-\item Es un protocolo ampliamente difundido en el mundo.
-\item Permite transferir varios archivos en una sóla conexión.
-\item Si se interrumpe una conexión, ésta puede ser reestablecida posteriormente sin tener que retransmitir la porción que fue recibida exitosamente.
-\item El protocolo FTP permite, además de obtener, enviar archivos al servidor, es decir, se puede transferir archivos en ambos sentidos.
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ventajas}
+  El \vsftpd\ fue dise\~nado e implementado desde el principio pensando en la seguridad.\\
+  
+  \begin{itemize}
+	\item Se corrige defectos de dise\~ no fundamentales presentes en la mayor\'ia de las instalaciones de wu-ftpd, proftpd e incluso BSD-ftpd por no hacer uso del usuario root.
+	\item Se hace uso de poderosas instalaciones de seguridad tales como capacidades y chroot.
+	\item Emplea técnicas de codificación segura para hacer desbordamientos de búfer.
+  \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Certainly. vsftpd was designed and implemented from the ground up with security in mind.
+% It fixes fundamental design flaws present in most installations of wu-ftpd, proftpd and even bsd-ftpd by not over-using the dangerous root user.
+% It makes use of powerful security facilities such as capabilities and chroot.
+% It employs secure coding techniques to make buffer overflows a solved problem.
