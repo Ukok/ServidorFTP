@@ -1,0 +1,31 @@
+\section{Introducci\'on}
+  \begin{frame}
+    \frametitle{Introducci\'on}
+    FTP proviene de las siglas en inglés de File Transfer Protocol. Es un protocolo utilizado en forma específica para la transferencia de archivos a través de una red. \\
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{FTP y sus variantes}
+    \begin{columns}[t]
+     \column{0.4\textwidth}
+     {\bf FTPS}. Es una de las variantes del protocolo FTP utilizadas para la transmisión de datos de forma segura y cifrada por la red. En este protocolo, cada camino implica el uso de una capa SSL / TLS por debajo del protocolo FTP estándar para cifrar la información de control del servidor y/o los canales de datos.
+     
+     \column{0.4\textwidth}
+     {\bf SFTP}. Es otra variante del protocolo FTP para la transmisión de datos segura. Se utiliza habitualmente con el protocolo SSH para proporcionar dicha transferencia segura de archivos, aunque también puede utilizarse con otros protocolos de transferencia de datos seguros.
+     \end{columns}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{vsFTPd}
+    Very secure File Transfer Protocol daemon, es probablemente el servidor FTP m\'as seguro y r\'apido para sistemas Unix, tiene una licencia GPL y cuenta con diferentes caracter\'isticas, algunas son las siguientes:
+    \begin{itemize}
+    \item Usuarios virtuales.
+    \item Potente capacidad de configuracion por usuario.
+    \item Limite de ancho de banda.
+    \item Configuracion por IP de origen.
+    \item Limite por IP de origen
+    \item IPv6.
+    \item Soporte de cifrado a través de la integración SSL({\em Secure Sockets Layer}).
+  	\end{itemize}
+  \end{frame}

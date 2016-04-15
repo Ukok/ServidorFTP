@@ -1,0 +1,19 @@
+\section{Tecnolog\'ias$/$ Puertos $/$ Protocolos}
+\subsection{Tecnologias}
+  \begin{frame}
+    \frametitle{Tecnolog\'ias}
+    \begin{itemize}
+    	\item 
+    \end{itemize}
+  \end{frame}
+
+\subsection{Puertos y Protocolos}
+\begin{frame}
+\normalsize
+  	\frametitle{Puertos utilizados según los modos de conexión de FTP.}
+  	\begin{itemize}
+  	\item {\bf Activo}. El cliente crea una conexión de datos a través del puerto 20 del servidor, mientras que en el cliente asocia esta conexión desde un puerto aleatorio entre 1024 y 65535, enviando PORT para indicar al servidor el puerto a utilizar para la transferencia de datos.
+
+  	\item {\bf Pasivo}. El cliente envía PASV en lugar de PORT a través del puerto de control del servidor(21). Éste devuelve como respuesta el número de puerto a través del cual debe conectarse el cliente para hacer la transferencia de datos. El servidor puede elegir al azar cualquier puerto entre 1024 y 65535 o bien el rango de puertos determinado por el administrador del sistema.
+  	\end{itemize}
+\end{frame}
