@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Configuraci\'on}
+
+  \begin{frame}
+    \frametitle{Configuraci\'on}
+    \begin{itemize}
+      \item Respaldo del archivo de vsftpd.conf
+      \item Se crea un shell virtual o fantasma, para que el usuario no tenga acceso al sistema.
+      \item Se agrega un grupo que controle al servicio de vsftpd.
+    \end{itemize}
+    \begin{shell}
+      \cmd{ cp /etc/vsftpd.conf /etc/vsftpd.conf.backup }\\
+      \cmd{ mkdir /bin/ftp }
+      \cmd{ sh -c \tqd echo ''/bin/ftp'' >> /etc/shells\tqd}\\
+      \cmd{ groupadd ftp }
+      \cmd{ mkdir /home/ftp }
+    \hline\end{shell}
+  \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{frame}
+    \frametitle{Configuraci\'on}
+    \begin{itemize}
+      \item Crear el home donde cada usuario va alojar su informaci\'on.
+      \item Se crea un directorio de cada usuario en el cual va poder subir su informaci\'on.
+      \item Se modifica los permisos a las carpetas y la propiedad de las mismas.
+    \end{itemize}
+    
+    \begin{shell}
+      \cmd{ mkdir /home/ftp/usuario }
+      \cmd{ chmod 550 /home/ftp/usuario }\\
+      \cmd{ mkdir /home/ftp/usuario/upload }
+      \cmd{ chmod 750 /home/ftp/usuario/upload }
+    \hline\end{shell}
+  \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \begin{frame}
+     \frametitle{Configuraci\'on}
+    \begin{itemize}
+      \item Se crea el nuevo usuario.
+      \begin{itemize}
+        \item Se agrega al grupo ftp.
+        \item Se le asigna su directorio home.
+        \item Se le asigna el shell virtual.
+      \end{itemize}
+      \item Se modifica la propiedad de las carpetas del home.
+    \end{itemize}
+    
+    \begin{shell}
+      \cmd{ useradd -g ftp -d /home/ftp/usuario -s /bin/ftp -c ''Nombre del usuario'' usuario }\\
+      \cmd{ chown usuario.ftp /home/ftp/usuario/ -R }
+    \hline\end{shell}
+   \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \begin{frame}
+     \frametitle{Configuraci\'on}
+     \framesubtitle{Archivo vsftpd.chroot\_list}
+     \begin{itemize}
+       \item Crear el archivo vsftpd.chroot\_list
+       \item Agregar el usuario al archivo, tal como esta en /etc/passwd
+     \end{itemize}
+    \begin{shell}
+      \cmd{ touch /etc/vsftpd.chroot\_list }
+      \cmd{ sh -c \tqd cat /etc/passwd | grep usuario >> /etc/vsftpd.chroot\_list \tqd }
+    \hline\end{shell}
+   \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
