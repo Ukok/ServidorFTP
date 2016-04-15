@@ -5,7 +5,7 @@
     \frametitle{Configuraci\'on}
     \begin{itemize}
       \item Respaldo del archivo de vsftpd.conf
-      \item Se crea un shell virtual o fantasma, para que el usuario no tenga acceso al sistema.
+      \item Se crea un shell virtual o fantasma.
       \item Se agrega un grupo que controle al servicio de vsftpd.
     \end{itemize}
     \begin{shell}
@@ -21,8 +21,9 @@
   \begin{frame}
     \frametitle{Configuraci\'on}
     \begin{itemize}
-      \item Crear el home donde cada usuario va alojar su informaci\'on.
-      \item Se crea un directorio de cada usuario en el cual va poder subir su informaci\'on.
+      \item Crear el home donde cada usuario va encontrar su informaci\'on.
+      \item Se crea un directorio en el home de cada usuario, al cual se le dar\'an permisos, para 
+      que pueda subir archivos o crear directorios mediante ftp.
       \item Se modifica los permisos a las carpetas y la propiedad de las mismas.
     \end{itemize}
     
@@ -66,4 +67,54 @@
       \cmd{ sh -c \tqd cat /etc/passwd | grep usuario >> /etc/vsftpd.chroot\_list \tqd }
     \hline\end{shell}
    \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{frame}
+    \frametitle{Configuraci\'on}
+    \framesubtitle{Archivo vsftpd.conf}
+    Se modifica algunas opciones en el archivo de configuraci\'on.
+    \begin{shell}\\
+      listen=YES\\
+      local\_enable=YES\\
+      write\_enable=YES\\
+      local\_umask=077\\
+      xferlog\_file=/var/log/vsftpd.log\\
+      ftpd\_banner=Welcome to Equipo-7 FTP service.\\ \\
+    \hline\end{shell}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{frame}
+    \frametitle{Configuraci\'on}
+    \framesubtitle{Archivo vsftpd.conf}
+    Con estas configuraciones limitamos a cada usuario a su directorio personal.
+    \begin{shell}\\
+      chroot\_local\_user=YES\\
+      chroot\_list\_enable=YES\\
+      chroot\_list\_file=/etc/vsftpd.chroot\_list\\ \\
+    \hline\end{shell}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{frame}
+    \frametitle{Configuraci\'on}
+    \framesubtitle{FTPS}
+    Se crea las llaves.
+    
+    \begin{shell}
+      \cmd{openssl req -sha256 -x509 -nodes -days 365 -newkey rsa:4096 
+      -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.pem}\\
+    \hline\end{shell}
+    
+    Se modifica algunas opciones en el archivo de configuraci\'on.
+    
+    \begin{shell}
+      rsa\_cert\_file=/etc/ssl/certs/vsftpd.pem\\
+      rsa\_private\_key\_file=/etc/ssl/private/vsftpd.key\\
+      ssl\_enable=YES\\
+    \hline\end{shell}
+   \end{frame}
+   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
