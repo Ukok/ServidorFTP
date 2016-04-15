@@ -36,7 +36,7 @@ Administración de Servicios en Red
    * Conclusiones
    * Referencias
 
-  - Materia Adicional
+  - Materia Adicional.
    Pueden ser materiales que permitan una mayor comprensión del tema, apoyo para la exposición o manuales de referencia fiables considerados por el equipo para trabajar con el servidor.
 
    Solo puede colocarse un documento como enlace de todos los elementos revisados o que sirven de apoyo a el aprendizaje utilización del servidor. Pueden ser enlaces a videos, libros, manuales y cualquier otro elemento considerado por el equipo.
