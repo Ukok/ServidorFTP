@@ -5,6 +5,8 @@
 \usepackage{lmodern}
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
+
+\usepackage{tabularx}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\nameDoc}{Material Adicional: Servidor FTP}
 \newcommand{\nameSubject}{Administraci\'on de Servicios en Red}
@@ -47,6 +49,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\tqdl}{\textquotedblleft}   % " abren
 \newcommand{\tqdr}{\textquotedblright}  % " cierran
+\newcommand{\cmd}[1]{\texttt{\# #1}\\}
+\newenvironment{shell}
+{\center
+  \tabularx{0.8\textwidth}{|X|}
+  \hline
+}{\endtabularx
+  \endcenter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \renewcommand{\contentsname}{Contenido}
