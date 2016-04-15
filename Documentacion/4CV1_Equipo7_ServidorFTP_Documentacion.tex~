@@ -1,22 +1,19 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[letterpaper,12pt,oneside]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage[table]{xcolor}
 \usepackage{colortbl}
-% \usepackage{showframe}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\
-\newcommand{\nameDoc}{Servidor FTP}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{hyperref}
+
+\newcommand{\nameDoc}{Servidor FTP}
+
 \hypersetup{
 	colorlinks	= true,
 	linkcolor	= black,
@@ -24,10 +21,8 @@
 	pdftitle	= { \nameDoc },
 	pdfkeywords	= { FTP }
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{datetime}
 	\newdateformat{dmy}{\monthname[\THEMONTH] de \THEYEAR}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{geometry}
 \geometry{ letterpaper, margin = 1.0 in }
 \setlength{\topmargin}{0 pt}
@@ -35,15 +30,14 @@
 \setlength{\headsep}{12 pt}
 \setlength{\footskip}{12 pt}
 \setlength{\parindent}{12 pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 	\fancyhf{}
 	\fancyhead[C]{
 		\begin{tabularx}{\textwidth}{|X|c|}
 		\hline 
-		\\ \hline
-		Documentaci\'on & \mmddyydate\today
+		Documentaci\'on & \ddmmyydate\today
 		\\ \hline
 		\multicolumn{2}{|l|}{\nameDoc}
 		\\ \hline
@@ -52,19 +46,19 @@
 	\fancyfoot[LE,RO]{ \thepage }
 \renewcommand{\headrulewidth}{0.0 pt}
 \renewcommand{\footrulewidth}{0.0 pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \fancypagestyle{plain}{
 	\fancyhf{}
 	\fancyhead[LE,RO]{ \thepage }
 	\renewcommand{\headrulewidth}{0.0 pt}
 	\renewcommand{\footrulewidth}{0.0 pt}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\tqdl}{\textquotedblleft}		% " abren
 \newcommand{\tqdr}{\textquotedblright}		% " cierran
 \newcommand{\ted}{\textexclamdown}			% !
 \newcommand{\grad}{$^{\circ}$} 				% °
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 \renewcommand{\contentsname}{Contenido}
  	\pagenumbering{roman}
@@ -72,7 +66,7 @@
 	
 	\setlength{\headheight}{48 pt}
 	\addtolength{\textheight}{-48 pt}
-	\include{./content/version}
+	
   
   \tableofcontents
 % 	\listoffigures
