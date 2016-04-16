@@ -29,9 +29,9 @@
     
     \begin{shell}
       \cmd{ mkdir /home/ftp/usuario }
-      \cmd{ chmod 550 /home/ftp/usuario }\\
+      \cmd{ chmod 555 /home/ftp/usuario }\\
       \cmd{ mkdir /home/ftp/usuario/upload }
-      \cmd{ chmod 750 /home/ftp/usuario/upload }
+      \cmd{ chmod 0755 /home/ftp/usuario/upload }
     \hline\end{shell}
   \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,7 +50,7 @@
     
     \begin{shell}
       \cmd{ useradd -g ftp -d /home/ftp/usuario -s /bin/ftp -c ''Nombre del usuario'' usuario }\\
-      \cmd{ chown usuario.ftp /home/ftp/usuario/ -R }
+      \cmd{ chown usuario.ftp /home/ftp/usuario/* -R }
     \hline\end{shell}
    \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,7 +77,6 @@
       listen=YES\\
       local\_enable=YES\\
       write\_enable=YES\\
-      local\_umask=077\\
       xferlog\_file=/var/log/vsftpd.log\\
       ftpd\_banner=Welcome to Equipo-7 FTP service.\\ \\
     \hline\end{shell}
